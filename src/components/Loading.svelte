@@ -20,9 +20,9 @@
 		);
 </script>
 
-<div class={tw`flex w-full`}>
+<div class="flex w-full">
 	<div transition:slideBlocks={{ delay: 0, duration: 4000 }} class={paneClasses(true)} />
-	<div class={tw`w-screen h-screen flex justify-center items-center z-40`} />
+	<div class="w-screen h-screen flex justify-center items-center z-40" />
 	<div class="lds-hourglass" />
 	<div transition:slideBlocks class={paneClasses()} />
 </div>
