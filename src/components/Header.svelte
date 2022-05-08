@@ -1,7 +1,9 @@
 <script lang="ts">
+	import Contact from './Contact/Contact.svelte';
 </script>
 
 <header>
+	<Contact />
 	<nav class="flex items-center justify-between  saturate-50 px-4">
 		<div class="w-12 h-12  rounded-full">
 			<img alt="townbit" class="object-fit w-full h-full" />
@@ -12,13 +14,6 @@
 			<li class="px-4 py-6">Experience</li>
 			<li class="px-4 py-6">Social</li>
 		</ul>
-
-		<a
-			href="#"
-			class="px-8 md:w-[160px] text-center py-4 text-gray-800 shadow-md relative hover:(left-1 top-1) inline-grid place-center rounded-md my-4"
-		>
-			Hire Me
-		</a>
 	</nav>
 
 	<section class="h-screen relative text-lg   grid text-center place-content-center ">

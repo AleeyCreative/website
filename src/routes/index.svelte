@@ -5,10 +5,9 @@
 	import Loading from '../components/Loading.svelte';
 	import ThreeDeeInteractions from '../components/ThreeDeeInteractions.svelte';
 	import Socials from '../components/Socials.svelte';
-	import '../app.css';
 </script>
 
-<div>
+<div data-theme="light">
 	<Header />
 	<NavigationLink />
 	<LicenseInfo />

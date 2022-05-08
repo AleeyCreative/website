@@ -13,7 +13,7 @@
 		@apply flex justify-between text-clip w-[300px] fixed right-36 bottom-12 z-40;
 	}
 	.social {
-		@apply w-14 h-14 relative  rounded-full bg-white hover:before:w-full hover:before:h-full;
+		@apply w-16 h-16 relative  shadow-md rounded-full bg-white hover:before:w-full hover:before:h-full;
 	}
 	.social::before {
 		content: '';
