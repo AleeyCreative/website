@@ -10,7 +10,7 @@
 
 <style lang="postcss">
 	.socials-wrapper {
-		@apply flex justify-between text-clip w-[300px] fixed right-36 bottom-12 z-40;
+		@apply flex justify-between text-clip w-[300px] fixed right-36 bottom-12 z-30;
 	}
 	.social {
 		@apply w-16 h-16 relative  shadow-md rounded-full bg-white hover:before:w-full hover:before:h-full;

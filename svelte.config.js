@@ -1,5 +1,4 @@
 import adapter from '@sveltejs/adapter-auto';
-import { windi } from 'svelte-windicss-preprocess';
 import preprocess from 'svelte-preprocess';
 import poppanatorSvg from '@poppanator/sveltekit-svg';
 
@@ -7,12 +6,12 @@ import poppanatorSvg from '@poppanator/sveltekit-svg';
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: [preprocess(), windi({})],
+	preprocess: [preprocess({ postcss: true })],
 
 	kit: {
 		adapter: adapter(),
 		vite: {
-			plugins: [poppanatorSvg({})]
+			plugins: [poppanatorSvg()]
 		}
 	}
 };

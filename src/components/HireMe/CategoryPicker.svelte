@@ -12,14 +12,14 @@
 
 <div class={`category-wrapper ${isActive ? 'is-active' : ''}`} role="radio" on:click={handleClick}>
 	<div class="category-icon-wrapper">
-		{icon}
+		{icon ? icon : ''}
 	</div>
 	<div class="category-label">{label}</div>
 </div>
 
-<style windi>
+<style lang="postcss">
 	.category-wrapper {
-		@apply flex flex-col items-center cursor-pointer;
+		@apply flex flex-col items-center text-center cursor-pointer;
 	}
 	.is-active .category-icon-wrapper {
 		@apply bg-blue-300;
@@ -29,6 +29,6 @@
 		@apply w-16 h-16 bg-red-500 rounded-full mb-2;
 	}
 	.category-label {
-		@apply text-gray-600;
+		@apply text-gray-600 text-sm;
 	}
 </style>

@@ -5,6 +5,8 @@ node_modules
 /package
 .env
 .env.*
+*.zip
 !.env.example
 Handz - 3D Library
 Iconsax
+~*.md

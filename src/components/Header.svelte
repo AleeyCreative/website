@@ -1,9 +1,13 @@
 <script lang="ts">
-	import Contact from './Contact/Contact.svelte';
+	import { uiState } from '../store';
+
+	const toggleHireButton = () => {
+		uiState.update((prevUI) => ({ ...prevUI, isHireFormOpen: !prevUI.isHireFormOpen }));
+		console.log(uiState);
+	};
 </script>
 
 <header>
-	<Contact />
 	<nav class="flex items-center justify-between  saturate-50 px-4">
 		<div class="w-12 h-12  rounded-full">
 			<img alt="townbit" class="object-fit w-full h-full" />
@@ -14,22 +18,15 @@
 			<li class="px-4 py-6">Experience</li>
 			<li class="px-4 py-6">Social</li>
 		</ul>
+		<button class="toggle-button" on:click={toggleHireButton}> Hire Me</button>
 	</nav>
-
-	<section class="h-screen relative text-lg   grid text-center place-content-center ">
-		<div class=" text-3xl md:text-6xl animate-pulse  mb-8 grid gap-4">
-			<h3>Welcome</h3>
-			<h3>I am Baba Ali</h3>
-		</div>
-		<p>I am creative developer who solves problem</p>
-
-		<span class="isax isax-activity"> Active</span>
-		<div id="simple-wave" class="absolute w-60 h-80 bottom-0 text-green" />
-	</section>
 </header>
 
-<style>
-	#simple-wave {
-		background-image: url(handz-illustration/Black/Jumper/simple-wave.png);
+<style lang="postcss">
+	header {
+		@apply fixed top-0 w-full left-0;
+	}
+	.toggle-button {
+		@apply px-8 md:w-[160px] text-center right-4 py-4 shadow-md   inline-grid  rounded-md my-4;
 	}
 </style>
