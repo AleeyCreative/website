@@ -36,6 +36,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@sveltejs/adapter-static": "^1.0.0-next.31",
     "and": "^0.0.3",
     "anime": "^0.1.2",
     "autoprefixer": "^10.4.4",

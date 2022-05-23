@@ -24,7 +24,7 @@
 
 <style lang="postcss">
 	header {
-		@apply fixed top-0 w-full left-0;
+		@apply fixed z-20 top-0 w-full left-0;
 	}
 	.toggle-button {
 		@apply px-8 md:w-[160px] text-center right-4 py-4 shadow-md   inline-grid  rounded-md my-4;

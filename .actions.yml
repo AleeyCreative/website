@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  runs-on: alpine-latest
+  runs-on: ubuntu-latest
 
   steps:
     - uses: actions/checkout@v2
@@ -19,4 +19,4 @@ jobs:
 
     - run: yarn build
     - run: npm install -g surge
-    - run: surge ./build URL --token ${{secrets.TOKEN}}
+    - run: surge ./build baba.ali.surge.sh --token ${{secrets.DEPLOYMENT_TOKEN}}

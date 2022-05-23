@@ -72,9 +72,8 @@
 				class="textarea block w-full input-bg"
 			/>
 		</div>
-
-		<button class="close-button" on:click={close}> X</button>
 	</form>
+	<button class="close-button" on:click={close}> X</button>
 </div>
 
 <style lang="postcss">

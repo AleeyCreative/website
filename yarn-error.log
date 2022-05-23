@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/local/bin/yarn add -D tailwindcss autoprefixer postcss
+  /usr/bin/node /usr/local/bin/yarn add @sveltejs/adapter-static
 
 PATH: 
   /home/baba/.local/bin:/home/baba/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/var/lib/snapd/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: EACCES: permission denied, mkdir '/home/baba/Projects/website/node_modules/generate-license-file/node_modules/arg'
+  Error: EACCES: permission denied, unlink '/home/baba/Projects/website/node_modules/and/.travis.yml'
 
 npm manifest: 
   {
