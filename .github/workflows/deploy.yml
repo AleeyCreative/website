@@ -19,4 +19,4 @@ jobs:
 
     - run: yarn build
     - run: npm install -g surge
-    - run: surge ./build baba.ali.surge.sh --token ${{secrets.DEPLOYMENT_TOKEN}}
+    - run: surge ./build baba-ali.surge.sh --token ${{secrets.DEPLOYMENT_TOKEN}}

@@ -2,7 +2,7 @@
 	import ServiceLayout from '../layout/ServiceLayout.svelte';
 </script>
 
-<ServiceLayout title="Website Development">
+<ServiceLayout title="Custom Software Development">
 	<p slot="description">
 		With the continual influx of individuals and businesses into the digital space, having a website
 		that stands out can be quite important in keeping you ahead of the competiton and giving you a
@@ -10,7 +10,7 @@
 	</p>
 	<img
 		slot="illustration"
-		src="/3d-illustrations/web-development.png"
+		src="/3d-illustrations/custom-software.png"
 		alt="Web development hero image"
 	/>
 </ServiceLayout>
