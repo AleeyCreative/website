@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { uiState } from '../../store';
 	import CategoryPicker from './CategoryPicker.svelte';
+	import { hireFormAction } from '../../api';
+	import { MSG_SENT, ERR_MSG } from '../../constants';
+
+	const ERROR_DURATION = 4000;
 
 	let name = '';
 	let contactInfo = '';
@@ -9,6 +13,8 @@
 	let description = '';
 
 	let isOpen: boolean;
+	let errorMsg: null | string;
+	let successMsg: null | string;
 
 	uiState.subscribe((ui) => {
 		isOpen = ui.isHireFormOpen;
@@ -16,18 +22,41 @@
 
 	const close = () => uiState.update((ui) => ({ ...ui, isHireFormOpen: !ui.isHireFormOpen }));
 
+	const handleSubmit = async (evt) => {
+		const form = new FormData(evt.target);
+		let reqBody = {};
+		//@ts-ignore
+		for (let [key, val] of form) {
+			reqBody[key] = val;
+		}
+
+		try {
+			const resp = await hireFormAction(reqBody);
+			successMsg = MSG_SENT;
+		} catch (err) {
+			errorMsg = ERR_MSG;
+		}
+	};
+
 	const handleCategory = (selCategory: string) => {
 		category = selCategory;
 	};
+
+	$: if (errorMsg) {
+		setTimeout(() => (errorMsg = null), ERROR_DURATION);
+	}
 </script>
 
 <div class={`hm-wrapper ${isOpen ? 'block top-0 h-screen' : ' top-[-100%]'}`}>
-	<form class="content">
+	<form class="content" on:submit|preventDefault={handleSubmit}>
 		<p class="my-8 md:text-2xl text-xl">
 			I am so happy that you want to work on something with me. Once you fill this form, I'll reach
 			out to you within a short while and things are gonna take off from there.
 		</p>
 
+		{#if errorMsg}
+			<div class="text-red-400 my-4">{errorMsg}</div>
+		{/if}
 		<div class="form-control mb-4">
 			<label for="description" class="input-group">
 				<span class="label-text"> Name</span>
@@ -71,6 +100,14 @@
 				bind:value={description}
 				class="textarea block w-full input-bg"
 			/>
+		</div>
+		<div class="mb-4" />
+		<div class="flex justify-center w-full">
+			{#if successMsg}
+				<div>{successMsg}</div>
+			{:else}
+				<button type="submit" class="btn btn-large"> Okay, I'm done </button>
+			{/if}
 		</div>
 	</form>
 	<button class="close-button" on:click={close}> X</button>
