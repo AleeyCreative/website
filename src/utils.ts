@@ -1,6 +1,12 @@
-export enum directionsEnum  {
-    Left = "LEFT",
-    Right = "RIGHT"
+export enum directionsEnum {
+	Left = 'LEFT',
+	Right = 'RIGHT'
 }
 
-export const links = ["/", "services-web-development", "services-software-development", "services-tools-and-integrations", "experiences",]
+export const links = [
+	'/',
+	'service-web-development',
+	'service-software-development',
+	'service-tools-and-integrations',
+	'experiences'
+];

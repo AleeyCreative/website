@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/local/bin/yarn add @sveltejs/adapter-static
+  /usr/bin/node /usr/local/bin/yarn add felte
 
 PATH: 
   /home/baba/.local/bin:/home/baba/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/var/lib/snapd/snap/bin
@@ -14,7 +14,8 @@ Platform:
   linux x64
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/home/baba/Projects/website/node_modules/and/.travis.yml'
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:71:26)
 
 npm manifest: 
   {
@@ -55,6 +56,7 @@ npm manifest:
     },
     "type": "module",
     "dependencies": {
+      "@sveltejs/adapter-static": "^1.0.0-next.31",
       "and": "^0.0.3",
       "anime": "^0.1.2",
       "autoprefixer": "^10.4.4",
@@ -666,6 +668,13 @@ Lockfile:
     dependencies:
       "@iarna/toml" "^2.2.5"
       esbuild "^0.14.21"
+      tiny-glob "^0.2.9"
+  
+  "@sveltejs/adapter-static@^1.0.0-next.31":
+    version "1.0.0-next.31"
+    resolved "https://registry.yarnpkg.com/@sveltejs/adapter-static/-/adapter-static-1.0.0-next.31.tgz#9ff34d78afd8906f371e120c4a4d446077093748"
+    integrity sha512-d9RNA/de5ljb+gN8mKA3YfmfJoTbYFdH96NYDD8u4Lu9O/ZnseUxOAcAmD4/LKbLXOY/oYhRpt029xT2owyI3Q==
+    dependencies:
       tiny-glob "^0.2.9"
   
   "@sveltejs/adapter-vercel@1.0.0-next.47":

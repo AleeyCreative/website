@@ -20,7 +20,7 @@
 
 <nav>
 	<div
-		class="nav-button"
+		class="m-4 nav-button"
 		title={nextLinkIndex > 0 ? links[nextLinkIndex - 1] : ''}
 		on:click={() => handleNavigate({ isForward: false })}
 	>
@@ -37,10 +37,10 @@
 
 <style lang="postcss">
 	nav {
-		@apply fixed bottom-12 flex justify-between px-8  md:text-4xl;
+		@apply flex justify-between  md:text-4xl;
 	}
 
 	.nav-button {
-		@apply relative shadow-lg rounded-md  inline-grid place-content-center w-16 h-16;
+		@apply relative px-4 bg-white shadow-lg rounded-md cursor-pointer  inline-grid place-content-center w-16 h-16;
 	}
 </style>

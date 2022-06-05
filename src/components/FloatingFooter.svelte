@@ -1,18 +1,13 @@
 <script lang="ts">
+	import NavigationLinks from './NavigationLinks.svelte';
+
 	import ArrowLeft from '../assets/iconsax/arrow-left.svg';
 	import ArrowRight from '../assets/iconsax/arrow-right-1.svg';
 </script>
 
 <footer>
 	<!-- Navigation Links -->
-	<nav>
-		<div class="nav-button">
-			<ArrowLeft />
-		</div>
-		<div class="nav-button">
-			<ArrowRight />
-		</div>
-	</nav>
+	<NavigationLinks />
 
 	<!-- Socials -->
 	<ul class="socials-wrapper avatar-group -space-x-4">
@@ -30,14 +25,6 @@
 <style lang="postcss">
 	footer {
 		@apply fixed bottom-12 flex md:px-8 items-center justify-between w-screen;
-	}
-
-	nav {
-		@apply flex justify-between   md:text-4xl;
-	}
-
-	.nav-button {
-		@apply relative px-4 bg-white shadow-lg rounded-md cursor-pointer  inline-grid place-content-center w-16 h-16;
 	}
 
 	.socials-wrapper {

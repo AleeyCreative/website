@@ -47,7 +47,7 @@
 	}
 </script>
 
-<div class={`hm-wrapper ${isOpen ? 'block top-0 h-screen' : ' top-[-100%]'}`}>
+<div class={`hm-wrapper ${isOpen ? 'block top-0 h-screen' : ' top-[-400%]'}`}>
 	<form class="content" on:submit|preventDefault={handleSubmit}>
 		<p class="my-8 md:text-2xl text-xl">
 			I am so happy that you want to work on something with me. Once you fill this form, I'll reach

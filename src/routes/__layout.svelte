@@ -6,13 +6,10 @@
 	import Loading from '../components/Loading.svelte';
 	import ThreeDeeInteractions from '../components/ThreeDeeInteractions.svelte';
 	import FloatingFooter from '../components/FloatingFooter.svelte';
-	import MainContent from '../components/MainContent.svelte';
 </script>
 
 <HireMe />
 <Header />
-<MainContent>
-	<slot />
-</MainContent>
+<slot />
 <LicenseInfo />
 <FloatingFooter />
