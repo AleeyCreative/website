@@ -7,7 +7,7 @@
 	import ThreeDeeInteractions from '../components/ThreeDeeInteractions.svelte';
 	import FloatingFooter from '../components/FloatingFooter.svelte';
 </script>
-
+<title> Baba Ali </title>
 <HireMe />
 <Header />
 <slot />

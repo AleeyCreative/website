@@ -1,4 +1,5 @@
 <script lang="ts">
+    import {goto} from "$app/navigation";
 	import { links } from '../utils';
 	import ArrowLeft from '../assets/iconsax/arrow-left.svg';
 	import ArrowRight from '../assets/iconsax/arrow-right-1.svg';
@@ -6,21 +7,20 @@
 	let nextLinkIndex = 0;
 
 	const handleNavigate = ({ isForward }) => {
-		alert('clicke');
-		if (isForward && nextLinkIndex < links.length - 1) {
-			nextLinkIndex++;
+
+		if (isForward && nextLinkIndex < links.length ) {
+			nextLinkIndex+=1;
 		}
 		if (!isForward && nextLinkIndex > 0) {
-			nextLinkIndex--;
+			nextLinkIndex-=1;
 		}
-		console.log('Next link', links[nextLinkIndex]);
-		location.replace(links[nextLinkIndex]);
+		goto(links[nextLinkIndex], {replaceState:true});
 	};
 </script>
 
 <nav>
 	<div
-		class="m-4 nav-button"
+		class="mr-4 nav-button"
 		title={nextLinkIndex > 0 ? links[nextLinkIndex - 1] : ''}
 		on:click={() => handleNavigate({ isForward: false })}
 	>

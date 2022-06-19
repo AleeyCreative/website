@@ -33,6 +33,6 @@
 		@apply w-[21em] md:w-[42em] h-[25em] md:h-[31em];
 	}
 	.illustration-wrapper img {
-		@apply h-full w-full relative bottom-[10.25em];
+		@apply h-full w-full relative bottom-[10.25em]
 	}
 </style>
