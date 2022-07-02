@@ -6,9 +6,8 @@
 <MainContent>
 	<ServiceLayout title="Custom Software Development">
 		<p slot="description">
-			With the continual influx of individuals and businesses into the digital space, having a
-			website that stands out can be quite important in keeping you ahead of the competiton and
-			giving you a competitive edge over your competitors
+			Running an organization? With top-notch software automating your processes away, it becomes
+			easier to optimize and scale for success
 		</p>
 		<img
 			slot="illustration"

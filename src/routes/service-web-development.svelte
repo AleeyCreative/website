@@ -8,7 +8,7 @@
 		<p slot="description">
 			With the continual influx of individuals and businesses into the digital space, having a
 			website that stands out can be quite important in keeping you ahead of the competiton and
-			giving you a competitive edge over your competitors
+			giving you an edge over your competitors
 		</p>
 		<img
 			slot="illustration"

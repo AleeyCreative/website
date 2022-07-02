@@ -1,4 +1,4 @@
-<section class="h-screen relative text-lg   grid text-center place-content-center ">
+<section class="h-screen relative text-lg w-8/12 mx-auto  grid text-center place-content-center ">
 	<div>
 		<div class=" text-3xl md:text-6xl  m-0 mb-8 grid gap-1">
 			<h3 class="m-2">Welcome</h3>

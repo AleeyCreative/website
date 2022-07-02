@@ -24,14 +24,14 @@
 
 <style lang="postcss">
 	footer {
-		@apply fixed bottom-12 flex md:px-8 items-center justify-between w-screen;
+		@apply fixed bottom-12 flex md:px-8 px-2 items-center justify-between w-screen;
 	}
 
 	.socials-wrapper {
 		@apply flex justify-between text-clip;
 	}
 	.social {
-		@apply w-16 h-16 relative  shadow-md rounded-full bg-white hover:before:w-full hover:before:h-full;
+		@apply w-8 md:w-16 h-8 md:h-16 relative  shadow-md rounded-full bg-white hover:before:w-full hover:before:h-full;
 	}
 	.social::before {
 		content: '';
