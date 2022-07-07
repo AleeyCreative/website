@@ -1,30 +1,20 @@
 Arguments: 
-  /usr/bin/node /usr/local/bin/yarn add @sveltejs/adapter-node@next
+  /usr/bin/node /usr/local/bin/yarn add util.inherits
 
 PATH: 
-  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/lib/snapd/snap/bin
+  /home/baba/.local/bin:/home/baba/.local/bin:/home/baba/.local/bin:/home/baba/.local/bin:/home/baba/bin:/home/baba/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/var/lib/snapd/snap/bin
 
 Yarn version: 
   1.22.17
 
 Node version: 
-  16.13.2
+  16.14.0
 
 Platform: 
   linux x64
 
 Trace: 
-  Error: connect ENETUNREACH 104.16.22.35:443 - Local (0.0.0.0:0)
-      at internalConnect (node:net:931:16)
-      at defaultTriggerAsyncIdScope (node:internal/async_hooks:454:18)
-      at emitLookup (node:net:1075:9)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:107658:28
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:107567:13
-      at RawTask.module.exports.RawTask.call (/usr/local/lib/node_modules/yarn/lib/cli.js:83655:19)
-      at flush (/usr/local/lib/node_modules/yarn/lib/cli.js:83737:29)
-      at processTicksAndRejections (node:internal/process/task_queues:78:11)
-      at runNextTicks (node:internal/process/task_queues:65:3)
-      at processImmediate (node:internal/timers:437:9)
+  Error: EACCES: permission denied, unlink '/home/baba/Projects/website/node_modules/@eslint/eslintrc/node_modules/ignore/CHANGELOG.md'
 
 npm manifest: 
   {
@@ -32,7 +22,7 @@ npm manifest:
   	"version": "0.0.1",
   	"scripts": {
   		"dev": "svelte-kit dev",
-  		"start":"node build/index.js",
+  		"start": "node build/index.js",
   		"build": "svelte-kit build",
   		"package": "svelte-kit package",
   		"preview": "svelte-kit preview",
@@ -68,6 +58,9 @@ npm manifest:
   	},
   	"type": "module",
   	"dependencies": {
+  		"@esbuild-plugins/node-globals-polyfill": "^0.1.1",
+  		"@esbuild-plugins/node-modules-polyfill": "^0.1.4",
+  		"@sveltejs/adapter-node": "^1.0.0-next.78",
   		"@sveltejs/adapter-static": "^1.0.0-next.31",
   		"and": "^0.0.3",
   		"anime": "^0.1.2",
@@ -76,6 +69,7 @@ npm manifest:
   		"generate-license-file": "^1.3.0",
   		"paper": "^0.12.15",
   		"postcss": "^8.4.12",
+  		"rollup-plugin-node-polyfills": "^0.2.1",
   		"tailwindcss": "^3.0.24",
   		"twind": "^0.16.16"
   	},
@@ -535,6 +529,19 @@ Lockfile:
       "@babel/helper-validator-identifier" "^7.16.7"
       to-fast-properties "^2.0.0"
   
+  "@esbuild-plugins/node-globals-polyfill@^0.1.1":
+    version "0.1.1"
+    resolved "https://registry.yarnpkg.com/@esbuild-plugins/node-globals-polyfill/-/node-globals-polyfill-0.1.1.tgz#a313ab3efbb2c17c8ce376aa216c627c9b40f9d7"
+    integrity sha512-MR0oAA+mlnJWrt1RQVQ+4VYuRJW/P2YmRTv1AsplObyvuBMnPHiizUF95HHYiSsMGLhyGtWufaq2XQg6+iurBg==
+  
+  "@esbuild-plugins/node-modules-polyfill@^0.1.4":
+    version "0.1.4"
+    resolved "https://registry.yarnpkg.com/@esbuild-plugins/node-modules-polyfill/-/node-modules-polyfill-0.1.4.tgz#eb2f55da11967b2986c913f1a7957d1c868849c0"
+    integrity sha512-uZbcXi0zbmKC/050p3gJnne5Qdzw8vkXIv+c2BW0Lsc1ji1SkrxbKPUy5Efr0blbTu1SL8w4eyfpnSdPg3G0Qg==
+    dependencies:
+      escape-string-regexp "^4.0.0"
+      rollup-plugin-node-polyfills "^0.2.1"
+  
   "@eslint/eslintrc@^0.4.3":
     version "0.4.3"
     resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-0.4.3.tgz#9e42981ef035beb3dd49add17acb96e8ff6f394c"
@@ -685,6 +692,13 @@ Lockfile:
     dependencies:
       "@iarna/toml" "^2.2.5"
       esbuild "^0.14.21"
+      tiny-glob "^0.2.9"
+  
+  "@sveltejs/adapter-node@^1.0.0-next.78":
+    version "1.0.0-next.78"
+    resolved "https://registry.yarnpkg.com/@sveltejs/adapter-node/-/adapter-node-1.0.0-next.78.tgz#72c35dfc5bdf6e15aa206745b39ca6402185f318"
+    integrity sha512-TXB5Ii0z/7o1B05p/YLsS4t+JUHFHWBzFv1U16TKvM3HMbMUJIx+AhpM2WJfDX8HtAyfd1m9OawGoUB+1ed24A==
+    dependencies:
       tiny-glob "^0.2.9"
   
   "@sveltejs/adapter-static@^1.0.0-next.31":
@@ -2902,7 +2916,7 @@ Lockfile:
     dependencies:
       yallist "^4.0.0"
   
-  magic-string@^0.25.7:
+  magic-string@^0.25.3, magic-string@^0.25.7:
     version "0.25.9"
     resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.25.9.tgz#de7f9faf91ef8a1c91d02c2e5314c8277dbcdd1c"
     integrity sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==
@@ -3629,6 +3643,22 @@ Lockfile:
     dependencies:
       glob "^7.1.3"
   
+  rollup-plugin-inject@^3.0.0:
+    version "3.0.2"
+    resolved "https://registry.yarnpkg.com/rollup-plugin-inject/-/rollup-plugin-inject-3.0.2.tgz#e4233855bfba6c0c12a312fd6649dff9a13ee9f4"
+    integrity sha512-ptg9PQwzs3orn4jkgXJ74bfs5vYz1NCZlSQMBUA0wKcGp5i5pA1AO3fOUEte8enhGUC+iapTCzEWw2jEFFUO/w==
+    dependencies:
+      estree-walker "^0.6.1"
+      magic-string "^0.25.3"
+      rollup-pluginutils "^2.8.1"
+  
+  rollup-plugin-node-polyfills@^0.2.1:
+    version "0.2.1"
+    resolved "https://registry.yarnpkg.com/rollup-plugin-node-polyfills/-/rollup-plugin-node-polyfills-0.2.1.tgz#53092a2744837164d5b8a28812ba5f3ff61109fd"
+    integrity sha512-4kCrKPTJ6sK4/gLL/U5QzVT8cxJcofO0OU74tnB19F40cmuAKSzH5/siithxlofFEjwvw1YAhPmbvGNA6jEroA==
+    dependencies:
+      rollup-plugin-inject "^3.0.0"
+  
   rollup-plugin-svelte-svg@^1.0.0-beta.6:
     version "1.0.0-beta.6"
     resolved "https://registry.yarnpkg.com/rollup-plugin-svelte-svg/-/rollup-plugin-svelte-svg-1.0.0-beta.6.tgz#0ee3deae2329abb1c90f50b83598aaf0bb0559fc"
@@ -3637,7 +3667,7 @@ Lockfile:
       rollup-pluginutils "^2.8.2"
       svgo "^2.3.1"
   
-  rollup-pluginutils@^2.8.2:
+  rollup-pluginutils@^2.8.1, rollup-pluginutils@^2.8.2:
     version "2.8.2"
     resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.8.2.tgz#72f2af0748b592364dbd3389e600e5a9444a351e"
     integrity sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==
