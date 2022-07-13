@@ -3,7 +3,7 @@
   export let onChange: Function;
   export let selected: any;
 
-  export let icon: any;
+  export let Icon: any;
 
   $: isActive = selected === label;
 
@@ -11,9 +11,11 @@
 </script>
 
 <div class={`category-wrapper ${isActive ? 'is-active' : ''}`} role="radio" on:click={handleClick}>
-  <div class="category-icon-wrapper">
-    {icon ? icon : ''}
-  </div>
+  {#if Icon}
+    <div class="category-icon-wrapper">
+      <Icon />
+    </div>
+  {/if}
   <div class="category-label">{label}</div>
 </div>
 
@@ -26,7 +28,7 @@
   }
 
   .category-icon-wrapper {
-    @apply w-10 h-10 md:w-16 md:h-16 bg-red-500 rounded-full mb-2;
+    @apply flex items-center justify-center w-10 h-10 md:w-16 md:h-16 bg-red-500 rounded-full mb-2;
   }
   .category-label {
     @apply text-gray-600 text-sm;

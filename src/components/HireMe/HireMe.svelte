@@ -4,6 +4,12 @@
   import { hireFormAction } from '../../api';
   import { MSG_SENT, ERR_MSG } from '../../constants';
 
+  // Icons
+  import Shop from '../../assets/iconsax/shop.svg';
+  import Station from '../../assets/iconsax/devices-1.svg';
+  import Logic from '../../assets/iconsax/hierarchy-square-3.svg';
+  import Tools from '../../assets/iconsax/shapes.svg';
+  import IconX from '../../assets/iconsax/close-circle.svg';
   const ERROR_DURATION = 4000;
 
   let name = '';
@@ -75,10 +81,30 @@
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-2 mb-4 items-center w-full">
-      <CategoryPicker label="E-Commerce" onChange={handleCategory} selected={category} />
-      <CategoryPicker label="Marketing Website" onChange={handleCategory} selected={category} />
-      <CategoryPicker label="Custom Software" onChange={handleCategory} selected={category} />
-      <CategoryPicker label="Bots & Integration" onChange={handleCategory} selected={category} />
+      <CategoryPicker
+        Icon={Shop}
+        label="E-Commerce"
+        onChange={handleCategory}
+        selected={category}
+      />
+      <CategoryPicker
+        Icon={Station}
+        label="Marketing Website"
+        onChange={handleCategory}
+        selected={category}
+      />
+      <CategoryPicker
+        Icon={Logic}
+        label="Custom Software"
+        onChange={handleCategory}
+        selected={category}
+      />
+      <CategoryPicker
+        Icon={Tools}
+        label="Bots & Integration"
+        onChange={handleCategory}
+        selected={category}
+      />
     </div>
 
     <div class="mb-4 form-control">
@@ -110,7 +136,7 @@
     </div>
   </form>
   <div class="mb-[10em]" />
-  <button class="close-button" on:click={close}> X</button>
+  <button class="close-button" on:click={close}> <IconX /></button>
 </div>
 
 <style lang="postcss">
@@ -121,6 +147,6 @@
     @apply py-4 md:px-4  w-10/12 md:w-[40em]  h-full mx-auto   gap-4;
   }
   .close-button {
-    @apply w-16 h-16 absolute  bg-red-400 shadow-md rounded-full right-8 bottom-1 md:bottom-8  hover:before:w-full hover:before:h-full;
+    @apply w-16 h-16 absolute inline-grid place-items-center  bg-red-400 shadow-md rounded-full right-8 bottom-1 md:bottom-8;
   }
 </style>
