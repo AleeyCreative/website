@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/local/bin/yarn remove util.inherits
+  /usr/bin/node /usr/local/bin/yarn add devicons
 
 PATH: 
   /home/baba/.local/bin:/home/baba/.local/bin:/home/baba/.local/bin:/home/baba/.local/bin:/home/baba/bin:/home/baba/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/var/lib/snapd/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/home/baba/Projects/website/node_modules/@eslint/eslintrc/node_modules/ignore/CHANGELOG.md'
+  Error: EACCES: permission denied, unlink '/home/baba/Projects/website/node_modules/@eslint/eslintrc/node_modules/ignore/LICENSE-MIT'
 
 npm manifest: 
   {
